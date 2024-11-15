@@ -29,6 +29,7 @@
     "ai": "^3.4.33",
     "blo": "~1.2.0",
     "burner-connector": "~0.0.8",
+    "ccount": "^2.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "daisyui": "4.12.10",
