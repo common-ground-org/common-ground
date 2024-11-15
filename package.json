@@ -1,0 +1,45 @@
+{
+  "name": "common-ground",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "account": "yarn workspace @common-ground/hardhat account",
+    "chain": "yarn workspace @common-ground/hardhat chain",
+    "compile": "yarn workspace @common-ground/hardhat compile",
+    "deploy": "yarn workspace @common-ground/hardhat deploy",
+    "flatten": "yarn workspace @common-ground/hardhat flatten",
+    "fork": "yarn workspace @common-ground/hardhat fork",
+    "format": "yarn next:format && yarn hardhat:format",
+    "generate": "yarn workspace @common-ground/hardhat generate",
+    "hardhat-verify": "yarn workspace @common-ground/hardhat hardhat-verify",
+    "hardhat:format": "yarn workspace @common-ground/hardhat format",
+    "hardhat:lint": "yarn workspace @common-ground/hardhat lint",
+    "hardhat:lint-staged": "yarn workspace @common-ground/hardhat lint-staged",
+    "hardhat:test": "yarn workspace @common-ground/hardhat test",
+    "postinstall": "husky install",
+    "next:build": "yarn workspace @common-ground/nextjs build",
+    "next:check-types": "yarn workspace @common-ground/nextjs check-types",
+    "next:format": "yarn workspace @common-ground/nextjs format",
+    "next:lint": "yarn workspace @common-ground/nextjs lint",
+    "next:serve": "yarn workspace @common-ground/nextjs serve",
+    "precommit": "lint-staged",
+    "start": "yarn workspace @common-ground/nextjs dev",
+    "test": "yarn hardhat:test",
+    "vercel": "yarn workspace @common-ground/nextjs vercel",
+    "vercel:yolo": "yarn workspace @common-ground/nextjs vercel:yolo",
+    "verify": "yarn workspace @common-ground/hardhat verify"
+  },
+  "devDependencies": {
+    "husky": "~8.0.3",
+    "lint-staged": "~13.2.2"
+  },
+  "packageManager": "yarn@3.2.3",
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
