@@ -41,11 +41,13 @@
     "react-copy-to-clipboard": "~5.1.0",
     "react-dom": "~18.3.1",
     "react-hot-toast": "~2.4.0",
+    "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "~3.1.0",
     "viem": "2.21.32",
     "wagmi": "2.12.23",
+    "zod": "^3.23.8",
     "zustand": "~5.0.0"
   },
   "devDependencies": {
