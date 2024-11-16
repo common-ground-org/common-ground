@@ -31,6 +31,7 @@
     "ai": "^3.4.33",
     "blo": "~1.2.0",
     "burner-connector": "~0.0.8",
+    "ccount": "^2.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "daisyui": "4.12.10",
@@ -43,11 +44,14 @@
     "react-copy-to-clipboard": "~5.1.0",
     "react-dom": "~18.3.1",
     "react-hot-toast": "~2.4.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "~3.1.0",
     "viem": "2.21.32",
     "wagmi": "2.12.23",
+    "zod": "^3.23.8",
     "zustand": "~5.0.0"
   },
   "devDependencies": {
