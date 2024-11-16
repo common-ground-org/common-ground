@@ -5,6 +5,7 @@ import { LightBoard, PatternCell } from "../../components/ui/lightboard";
 import { ProjectForm } from "./form";
 import { MinimalCard, MinimalCardDescription, MinimalCardImage, MinimalCardTitle } from "@/components/ui/minimal-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SmartAccountButton } from "~~/components/ui/SmartAccountButton";
 
 export function Explore() {
   const [controlledDrawState, setControlledDrawState] = useState<PatternCell>("2");
@@ -52,7 +53,8 @@ export function Explore() {
 
   return (
     <div className="space-y-2 lg:space-y-4 p-2 lg:p-8">
-      <div className="w-full bg-black p-4">
+      <SmartAccountButton />
+      {/* <div className="w-full bg-black p-4">
         <LightBoard
           rows={15}
           lightSize={4}
@@ -67,7 +69,7 @@ export function Explore() {
             textBright: "#00ff00",
           }}
         />
-      </div>
+      </div> */}
 
       <Tabs defaultValue="account" className="w-[400px]">
         <TabsList>
