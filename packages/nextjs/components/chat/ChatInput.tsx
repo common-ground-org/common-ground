@@ -8,7 +8,7 @@ interface ChatInputProps {
 
 export default function ChatInput({ chat }: ChatInputProps) {
   return (
-    <div className="flex w-full px-8 pt-2">
+    <div className="flex w-full max-w-screen-lg mx-autopx-8 pt-2">
       <form
         onSubmit={chat.handleSubmit}
         className="flex grow border-2 px-4 py-1 border-gray-500 rounded-2xl items-center"
