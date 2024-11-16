@@ -1,80 +1,38 @@
-# 🏗 Scaffold-ETH 2
+# CommonGround
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+## Decentralized public goods crowdfunding platform for mass adoption
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+### Introduction
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+CommonGround is a decentralized crowdfunding platform especially designed for public goods, catering to both web2 and web3 users. Through providing an AI-native user experience, it aims to make decentralized public goods crowdfunding more accessible and easier to understand. 
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+Combined with Web2 user experience and Web3 decentralized infrastructure, CommonGround resolves the lack of trust issues while enabling smoother onboarding for users from both web2 and web3 communities.
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+### Architecture
 
-## Requirements
+#### Roles
 
-Before you begin, you need to install the following tools:
+* **Contributor**: A contributor is a user who contributes to a public good. Contributors can contribute to a project by providing funds, ideas, or other resources, and receives the corresponding benefits of the public good.
 
-- [Node (>= v18.18)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
+* **Initiator**: An initiator is a user who initiates a project. Initiator can quickly create a public good project on CommonGround with the help of AI, sets the perks (both rights and obligations for contributors) and milestones, and manages the project. When the project achieves certain milestones, it will receive fundings from the contributors accordingly.
 
-## Quickstart
+* **Evaluator**: An evaluator is a user who evaluates a project. Users must stake a certain amount of tokens to become an evaluator. As evaluators, users within the network can set up an AI Agent inside TEE (Trusted Execution Environment) to evaluate whether the project has achieved the milestones and distribute the fundings accordingly. Evaluators can earn yield from staking and evaluating, meanwhile face the risk of slashing when evaluate incorrectly or maliciously.
 
-To get started with Scaffold-ETH 2, follow the steps below:
+#### Integrations
 
-1. Install dependencies if it was skipped in CLI:
+* Polygon POS: The mainnet of CommonGround.
+* Phala Network: The TEE provider of AI Agents network within CommonGround.
+* NounsDAO: Nouns art UI integration.
+* Sign Protocol (in development): For attestation of contributors' perks and initiators' achievements (most likely will be unstructured, off-chain events), we would like to integrate Sign Protocol to provide a secure and decentralized way to attest the events.
+* Celo (in development): The second user-centric EVM chain that will be onboarded to CommonGround.
+* Biconomy (in development): For gasless transactions and smart session keys, we will integrate Biconomy's SDKs.
 
-```
-cd my-dapp-example
-yarn install
-```
+### Goals & Future development
 
-2. Run a local network in the first terminal:
+1. Complete integrations in CommonGround MVP.
+2. Launch the first project on CommonGround.
+3. Onboard more contributors and initiators from both web2 and web3 communities to CommonGround.
+4. Integrate more TEE providers to expand the decentralized AI Agents network.
+5. Make CommonGround the leading crowdfunding platform for public goods.
 
-```
-yarn chain
-```
-
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
-
-```
-yarn deploy
-```
-
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
-
-4. On a third terminal, start your NextJS app:
-
-```
-yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-Run smart contract test with `yarn hardhat:test`
-
-- Edit your smart contracts in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
-
-
-## Documentation
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+### Other sources
