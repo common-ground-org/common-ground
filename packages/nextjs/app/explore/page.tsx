@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LightBoard, PatternCell } from "../../components/ui/lightboard";
+import { ProjectForm } from "./form";
 import { MinimalCard, MinimalCardDescription, MinimalCardImage, MinimalCardTitle } from "@/components/ui/minimal-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -51,19 +52,19 @@ export function Explore() {
 
   return (
     <div className="space-y-2 lg:space-y-4 p-2 lg:p-8">
-      <div className="max-w-2xl w-full bg-black">
+      <div className="w-full bg-black p-4">
         <LightBoard
-          rows={12}
+          rows={15}
           lightSize={4}
           gap={2}
-          text="NEON DREAMS"
+          text="P r o j e c t s"
           font="default"
-          updateInterval={150}
+          updateInterval={10}
           colors={{
-            background: "#0a0a0a",
-            textDim: "#ff00ff33",
-            drawLine: "#ff00ff66",
-            textBright: "#ff00ffff",
+            background: "#001a00",
+            textDim: "#006600",
+            drawLine: "#00b300",
+            textBright: "#00ff00",
           }}
         />
       </div>
@@ -78,6 +79,7 @@ export function Explore() {
       </Tabs>
 
       <div className="w-full max-w-4xl">
+        <ProjectForm />
         <div className="p-2">
           <h3 className="text-xl font-semibold">MinimalCard</h3>
         </div>
