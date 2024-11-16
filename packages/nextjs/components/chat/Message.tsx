@@ -1,3 +1,4 @@
+import "../../styles/message.css";
 import { Message } from "ai";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -42,7 +43,7 @@ export default function MessageComponent({ message, isLoading }: MessageProps) {
       <div>
         <p className="text-sm font-thin text-gray-500">Common Ground Agent</p>
       </div>
-      <div className="p-4 rounded-lg max-w-[85%] bg-gray-100">
+      <div className="chat-box p-4 rounded-lg max-w-[85%] bg-gray-100">
         <Markdown remarkPlugins={[remarkGfm]}>{message.content}</Markdown>
       </div>
     </div>

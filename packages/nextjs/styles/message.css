@@ -1,0 +1,21 @@
+.chat-box pre {
+    background-color: #fcfdff;
+    color: #1b1b1b;
+    padding: 8px;
+    padding-left: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.chat-box code {
+    background-color: #fcfdff;
+    border-radius: 4px;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.chat-box h3 {
+    font-weight: 600;
+}
