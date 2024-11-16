@@ -1,6 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
+import { ethers } from "ethers";
 
 /**
  * Deploys a contract named "CommonGroundManager" using the deployer account and
@@ -34,7 +35,35 @@ const deployCommonGroundManager: DeployFunction = async function (hre: HardhatRu
 
   // Get the deployed contract to interact with it after deploying.
   const CommonGroundManager = await hre.ethers.getContract<Contract>("CommonGroundManager", deployer);
-  console.log("👋 CommonGroundManager deployed successfully");
+
+  console.log("👋 CommonGroundManager deployed successfully", CommonGroundManager.target);
+
+  await deploy("Project", {
+    from: deployer,
+    args: [
+      CommonGroundManager.target, // managerContractAddress
+      "Default Governance Rights", // governanceRights
+      "Default Usage Rights", // usageRights
+      "Project Description", // projectDescription
+      ethers.encodeBytes32String("Project Name"), // projectName (as bytes32)
+      ethers.parseEther("1000"), // targetFundingAmount (e.g., 1000 tokens)
+      ethers.parseEther("10"), // minContributeAmount (e.g., 10 tokens)
+      "0xEd341189327CABCD25813dbCB432eb869130aEfe", // token address (replace with actual ERC20 token address)
+      Math.floor(Date.now() / 1000) + 30 * 24 * 60 * 60, // fundingDDL (30 days from now)
+      ["Milestone 1", "Milestone 2"], // milestoneDescriptions
+      [50, 50], // releasePercentages (must sum to 100)
+      [
+        Math.floor(Date.now() / 1000) + 60 * 24 * 60 * 60, // deadline for milestone 1 (60 days)
+        Math.floor(Date.now() / 1000) + 90 * 24 * 60 * 60, // deadline for milestone 2 (90 days)
+      ],
+    ],
+    log: true,
+    autoMine: true,
+  });
+
+  // Get the deployed contract
+  const Project = await hre.ethers.getContract<Contract>("Project", deployer);
+  console.log("👋 Project deployed successfully", Project.target);
 };
 
 export default deployCommonGroundManager;
