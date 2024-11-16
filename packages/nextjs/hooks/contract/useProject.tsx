@@ -2,7 +2,7 @@ import { useContractConfig } from "./contractConfig";
 import { CreateProjectArgs } from "./type";
 import { useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 
-// read the project information
+// 读取项目信息
 export const useCommonGroundInfo = () => {
   const contractConfig = useContractConfig();
   const { data, error, isLoading } = useReadContract({
@@ -21,7 +21,7 @@ export const useCommonGroundInfo = () => {
   };
 };
 
-// create a project
+// 创建项目
 export const useCreateProject = () => {
   const contractConfig = useContractConfig();
   const { data: hash, error, isPending, writeContract } = useWriteContract();
@@ -53,6 +53,7 @@ export const useCreateProject = () => {
         targetFundingAmount,
         minContributeAmount,
         token,
+        deadlines[deadlines.length - 1],
         milestoneDescriptions,
         fundingAmounts,
         deadlines,
