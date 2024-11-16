@@ -36,7 +36,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className={orbitron.className + " mb-2"}>CommonGround</SidebarGroupLabel>
+          <SidebarGroupLabel className={orbitron.className + " mb-2 text-xl"}>CommonGround</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map(item => (
@@ -54,7 +54,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarImage src="/user-avatar.svg" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </Sidebar>

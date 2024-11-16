@@ -18,9 +18,9 @@ function ChatInitState({ chat }: { chat: ChatResult }) {
         <p>I wanna...</p>
       </div>
       <div className="flex flex-wrap gap-8">
-        <PictureCard title="Contribute" />
-        <PictureCard title="Donate" />
-        <PictureCard title="Build" />
+        <PictureCard title="Get Funding" imageUrl="/get-funding-ui.svg" />
+        <PictureCard title="Donate" imageUrl="/donate-ui.svg" />
+        <PictureCard title="Offer Skills" imageUrl="/offer-skills-ui.svg" />
       </div>
     </div>
   );

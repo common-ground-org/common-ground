@@ -15,7 +15,7 @@ export default function ChatInput({ chat }: ChatInputProps) {
       >
         <textarea
           className="grow p-2 border-none focus:outline-none resize-none bg-transparent max-h-[200px] overflow-y-auto scrollbar-hide"
-          placeholder="Tell Common Ground Agent"
+          placeholder="I wanna..."
           value={chat.input}
           onChange={chat.handleInputChange}
           rows={1}
@@ -28,7 +28,7 @@ export default function ChatInput({ chat }: ChatInputProps) {
           }}
         />
         <button className="p-2" type="submit" disabled={chat.isLoading}>
-          Submit
+          Send
         </button>
       </form>
     </div>

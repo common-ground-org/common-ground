@@ -7,9 +7,13 @@ interface MessageAreaProps {
 
 export default function MessageArea({ chat }: MessageAreaProps) {
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 space-y-4">
       {chat.messages.map((message, index) => (
-        <MessageComponent isLoading={chat.isLoading} key={index} message={message} />
+        <MessageComponent
+          isLoading={chat.isLoading && index === chat.messages.length - 1}
+          key={index}
+          message={message}
+        />
       ))}
     </div>
   );
