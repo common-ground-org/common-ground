@@ -17,10 +17,10 @@ function ChatInitState({ chat }: { chat: ChatResult }) {
       <div className="mt-12 mb-6 text-base font-semibold">
         <p>I wanna...</p>
       </div>
-      <div className="flex flex-wrap w-full justify-between px-20">
-        <PictureCard title="Contribute" />
-        <PictureCard title="Donate" />
-        <PictureCard title="Build" />
+      <div className="flex flex-wrap gap-8">
+        <PictureCard title="Get Funding" imageUrl="/get-funding-ui.svg" />
+        <PictureCard title="Donate" imageUrl="/donate-ui.svg" />
+        <PictureCard title="Offer Skills" imageUrl="/offer-skills-ui.svg" />
       </div>
     </div>
   );
