@@ -76,12 +76,13 @@ contract Project is Ownable {
 	string private _GOVERNANCE_RIGHTS;
 	string private _USAGE_RIGHTS;
 	string private _PROJECT_DESCRIPTION;
-	bytes32 private immutable _PROJECT_NAME;
+	string private _PROJECT_NAME;
     uint256 private immutable _FUNDING_DDL;
 	Milestone[] private _MILESTONES;
 	uint256 private immutable _TARGET_FUNDING_AMOUNT;
 	uint256 private immutable _MIN_CONTRIBUTE_AMOUNT;
-	IERC20 private immutable _TOKEN;
+	// IERC20 private immutable _TOKEN;
+	address private immutable _TOKEN_ADDRESS;
 	CommonGroundManager private immutable _MANAGER_CONTRACT_ADDRESS;
 
 	// State
@@ -98,7 +99,7 @@ contract Project is Ownable {
 		string memory governanceRights,
 		string memory usageRights,
 		string memory projectDescription,
-		bytes32 projectName,
+		string memory projectName,
 		uint256 targetFundingAmount,
 		uint256 minContributeAmount,
 		address token,
@@ -130,7 +131,8 @@ contract Project is Ownable {
 		_TARGET_FUNDING_AMOUNT = targetFundingAmount;
 		_MIN_CONTRIBUTE_AMOUNT = minContributeAmount;
         _FUNDING_DDL = fundingDDL;
-		_TOKEN = IERC20(token);
+		// _TOKEN = IERC20(token);
+		_TOKEN_ADDRESS = token;
 		_MANAGER_CONTRACT_ADDRESS = CommonGroundManager(managerContractAddress);
 
 		// Initialize milestones with user provided values
@@ -159,7 +161,7 @@ contract Project is Ownable {
 			string memory governanceRights,
 			string memory usageRights,
 			string memory projectDescription,
-			bytes32 projectName,
+			string memory projectName,
 			uint256 targetFundingAmount,
 			uint256 minContributeAmount,
 			uint256 currentFundingAmount,
@@ -184,11 +186,13 @@ contract Project is Ownable {
 
 	function contribute(
 		uint256 amount
-	) public onlyProjectStatus(ProjectStatus.FUNDING) {
+	) public onlyProjectStatus(ProjectStatus.FUNDING) payable {
 		require(
 			amount > _MIN_CONTRIBUTE_AMOUNT,
 			"Amount must be greater than minimum contribute amount"
 		);
+
+		require(msg.value == amount, "Amount must be equal to the contribution");
 
 		transferTokensToThisFrom(msg.sender, amount);
 
@@ -263,7 +267,7 @@ contract Project is Ownable {
 	}
 
 	function transferTokens(address to, uint256 amount) internal {
-		_TOKEN.safeTransfer(to, amount);
+		// _TOKEN.safeTransfer(to, amount);
 	}
 
 	function transferTokensFrom(
@@ -271,14 +275,14 @@ contract Project is Ownable {
 		address to,
 		uint256 amount
 	) internal {
-		_TOKEN.safeTransferFrom(from, to, amount);
+		// _TOKEN.safeTransferFrom(from, to, amount);
 	}
 
 	function transferTokensToThisFrom(address from, uint256 amount) internal {
-		_TOKEN.safeTransferFrom(from, address(this), amount);
+		// _TOKEN.safeTransferFrom(from, address(this), amount);
 	}
 
     function refundAll() internal {
-        _TOKEN.safeTransfer(msg.sender, _funding_amounts[msg.sender]);
+        // _TOKEN.safeTransfer(msg.sender, _funding_amounts[msg.sender]);
     }
 }

@@ -19,7 +19,7 @@ contract CommonGroundManager is Ownable {
 		ApplicationStatus status;
 	}
 
-    struct ProjectSummary {
+	struct ProjectSummary {
 		address project;
 		string description;
 		string status;
@@ -49,11 +49,11 @@ contract CommonGroundManager is Ownable {
 		string memory governanceRights,
 		string memory usageRights,
 		string memory projectDescription,
-		bytes32 projectName,
+		string memory projectName,
 		uint256 targetFundingAmount,
 		uint256 minContributeAmount,
 		address token,
-        uint256 fundingDDL,
+		uint256 fundingDDL,
 		string[] memory milestoneDescriptions,
 		uint256[] memory fundingAmounts,
 		uint256[] memory deadlines
@@ -69,7 +69,7 @@ contract CommonGroundManager is Ownable {
 				targetFundingAmount,
 				minContributeAmount,
 				token,
-                fundingDDL,
+				fundingDDL,
 				milestoneDescriptions,
 				fundingAmounts,
 				deadlines
@@ -89,17 +89,22 @@ contract CommonGroundManager is Ownable {
 		_project_applications[project] = _total_milestone_applications;
 	}
 
-	function getMilestoneApplication(address project) public view returns (MilestoneApplication memory) {
-		require(_project_applications[project] > 0, "Project does not have a milestone application");
+	function getMilestoneApplication(
+		address project
+	) public view returns (MilestoneApplication memory) {
+		require(
+			_project_applications[project] > 0,
+			"Project does not have a milestone application"
+		);
 		return _milestone_applications[_project_applications[project]];
 	}
 
-	function getProjectList() public view returns (address[] memory) {
-		address[] memory project_list = new address[](_total_projects);
+	function getProjectAddresses() public view returns (address[] memory) {
+		address[] memory addresses = new address[](_total_projects);
 		for (uint256 i = 1; i <= _total_projects; i++) {
-			project_list[i - 1] = _projects[i];
+			addresses[i - 1] = _projects[i];
 		}
-		return project_list;
+		return addresses;
 	}
 
 	function CommonGroundInfo() public view returns (uint256, uint256) {

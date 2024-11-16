@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     CommonGroundManager: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
       abi: [
         {
           inputs: [],
@@ -122,9 +122,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
@@ -211,7 +211,7 @@ const deployedContracts = {
         },
         {
           inputs: [],
-          name: "getProjectList",
+          name: "getProjectAddresses",
           outputs: [
             {
               internalType: "address[]",
@@ -282,7 +282,7 @@ const deployedContracts = {
       },
     },
     Project: {
-      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      address: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
       abi: [
         {
           inputs: [
@@ -307,9 +307,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
@@ -354,33 +354,6 @@ const deployedContracts = {
           inputs: [
             {
               internalType: "address",
-              name: "target",
-              type: "address",
-            },
-          ],
-          name: "AddressEmptyCode",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "account",
-              type: "address",
-            },
-          ],
-          name: "AddressInsufficientBalance",
-          type: "error",
-        },
-        {
-          inputs: [],
-          name: "FailedInnerCall",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
               name: "owner",
               type: "address",
             },
@@ -397,17 +370,6 @@ const deployedContracts = {
             },
           ],
           name: "OwnableUnauthorizedAccount",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "token",
-              type: "address",
-            },
-          ],
-          name: "SafeERC20FailedOperation",
           type: "error",
         },
         {
@@ -452,7 +414,7 @@ const deployedContracts = {
           ],
           name: "contribute",
           outputs: [],
-          stateMutability: "nonpayable",
+          stateMutability: "payable",
           type: "function",
         },
         {
@@ -488,9 +450,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
@@ -607,7 +569,7 @@ const deployedContracts = {
   },
   80002: {
     CommonGroundManager: {
-      address: "0xB5b854CE3f20368Ccb76946ED474555233871D83",
+      address: "0xB40a7948bE4894DE05eaDaa2154B8e01a8dC0f1a",
       abi: [
         {
           inputs: [],
@@ -722,9 +684,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
@@ -811,7 +773,7 @@ const deployedContracts = {
         },
         {
           inputs: [],
-          name: "getProjectList",
+          name: "getProjectAddresses",
           outputs: [
             {
               internalType: "address[]",
@@ -882,7 +844,7 @@ const deployedContracts = {
       },
     },
     Project: {
-      address: "0x68a5EeAE4d2885Ca52EE8A1E702e21662EdCd2c9",
+      address: "0x21bcaeC732B0E53d4093E42eB2A52677C4451741",
       abi: [
         {
           inputs: [
@@ -907,9 +869,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
@@ -954,33 +916,6 @@ const deployedContracts = {
           inputs: [
             {
               internalType: "address",
-              name: "target",
-              type: "address",
-            },
-          ],
-          name: "AddressEmptyCode",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "account",
-              type: "address",
-            },
-          ],
-          name: "AddressInsufficientBalance",
-          type: "error",
-        },
-        {
-          inputs: [],
-          name: "FailedInnerCall",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
               name: "owner",
               type: "address",
             },
@@ -997,17 +932,6 @@ const deployedContracts = {
             },
           ],
           name: "OwnableUnauthorizedAccount",
-          type: "error",
-        },
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "token",
-              type: "address",
-            },
-          ],
-          name: "SafeERC20FailedOperation",
           type: "error",
         },
         {
@@ -1052,7 +976,7 @@ const deployedContracts = {
           ],
           name: "contribute",
           outputs: [],
-          stateMutability: "nonpayable",
+          stateMutability: "payable",
           type: "function",
         },
         {
@@ -1088,9 +1012,9 @@ const deployedContracts = {
               type: "string",
             },
             {
-              internalType: "bytes32",
+              internalType: "string",
               name: "projectName",
-              type: "bytes32",
+              type: "string",
             },
             {
               internalType: "uint256",
