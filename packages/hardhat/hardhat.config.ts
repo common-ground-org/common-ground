@@ -75,6 +75,10 @@ const config: HardhatUserConfig = {
       url: `https://sepolia.optimism.io`,
       accounts: [deployerPrivateKey],
     },
+    polygonAmoy: {
+      url: `https://rpc-amoy.polygon.technology`,
+      accounts: [deployerPrivateKey],
+    },
     polygon: {
       url: `https://polygon-rpc.com`,
       accounts: [deployerPrivateKey],
