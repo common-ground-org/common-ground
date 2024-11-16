@@ -9,8 +9,9 @@ import {
   PopoverFormSeparator,
   PopoverFormSuccess,
 } from "@/components/ui/popover-form";
-import { useCreateProject } from "@/hooks/contract/useProject";
 import { ethers } from "ethers";
+import { useCreateProject } from "~~/hooks/contracts/manager";
+import { ProjectCreate } from "~~/types/schemas/contracts/project";
 
 type FormState = "idle" | "loading" | "success";
 
@@ -18,29 +19,26 @@ export function ProjectForm() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [open, setOpen] = useState(false);
   const [projectName, setProjectName] = useState("My Project");
-  const [category, setCategory] = useState("DeFi");
   const [description, setDescription] = useState("A decentralized project");
   const [coverImage, setCoverImage] = useState("https://example.com/default-image.jpg");
   const [targetAmount, setTargetAmount] = useState("1.0");
   const [duration, setDuration] = useState("30");
-  const [story, setStory] = useState("Project story and details");
   const [governanceRights, setGovernanceRights] = useState("Voting rights for token holders");
   const [usageRights, setUsageRights] = useState("Access to platform features");
   const [minContributeAmount, setMinContributeAmount] = useState("0.1");
   const [token, setToken] = useState("0x0000000000000000000000000000000000000000");
   const [milestoneDescriptions, setMilestoneDescriptions] = useState("Phase 1, Phase 2, Phase 3");
-  const [fundingAmounts, setFundingAmounts] = useState("0.3, 0.3, 0.4");
+  const [fundingAmounts, setFundingAmounts] = useState("30, 30, 40");
   const [deadlines, setDeadlines] = useState("2024-12-31, 2025-06-30, 2025-12-31");
 
-  const { write: createProject, isPending, isConfirming, isConfirmed } = useCreateProject();
+  const { createProject } = useCreateProject();
 
-  function submit() {
-    const projectNameBytes32 = ethers.encodeBytes32String(projectName.slice(0, 31));
+  async function submit() {
     const targetAmountBigInt = ethers.parseEther(targetAmount);
     const minContributeAmountBigInt = ethers.parseEther(minContributeAmount);
 
     const milestoneDescriptionsArray = milestoneDescriptions.split(",").map(s => s.trim());
-    const fundingAmountsArray = fundingAmounts.split(",").map(s => ethers.parseEther(s.trim()));
+    const fundingAmountsArray = fundingAmounts.split(",").map(s => BigInt(s.trim()));
     const deadlinesArray = deadlines.split(",").map(s => BigInt(new Date(s.trim()).getTime() / 1000));
 
     if (
@@ -51,43 +49,33 @@ export function ProjectForm() {
       return;
     }
 
-    createProject({
+    const createInfo: ProjectCreate = {
       governanceRights,
       usageRights,
       projectDescription: description,
-      projectName: projectNameBytes32,
+      projectName,
       targetFundingAmount: targetAmountBigInt,
       minContributeAmount: minContributeAmountBigInt,
-      token,
+      token: token as `0x${string}`,
+      fundingDDL: deadlinesArray[deadlinesArray.length - 1],
       milestoneDescriptions: milestoneDescriptionsArray,
       fundingAmounts: fundingAmountsArray,
       deadlines: deadlinesArray,
-    });
+    };
+
+    console.table(createInfo);
 
     setFormState("loading");
 
-    setTimeout(() => {
+    try {
+      await createProject(createInfo);
       setFormState("success");
-    }, 1500);
-
-    setTimeout(() => {
+    } catch (error) {
+      console.error(error);
+    } finally {
       setOpen(false);
       setFormState("idle");
-      setProjectName("");
-      setCategory("");
-      setDescription("");
-      setCoverImage("");
-      setTargetAmount("");
-      setDuration("");
-      setStory("");
-      setGovernanceRights("");
-      setUsageRights("");
-      setMinContributeAmount("");
-      setToken("");
-      setMilestoneDescriptions("");
-      setFundingAmounts("");
-      setDeadlines("");
-    }, 3300);
+    }
   }
 
   return (
@@ -105,12 +93,10 @@ export function ProjectForm() {
             e.preventDefault();
             if (
               !projectName ||
-              !category ||
               !description ||
               !coverImage ||
               !targetAmount ||
               !duration ||
-              !story ||
               !governanceRights ||
               !usageRights ||
               !minContributeAmount ||

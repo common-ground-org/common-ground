@@ -45,7 +45,17 @@ function ChatMessageState({ chat }: { chat: ChatResult }) {
 }
 
 export default function Home() {
-  const chat: ChatResult = useChat({});
+  const chat: ChatResult = useChat({
+    maxSteps: 5,
+
+    // run client-side tools that are automatically executed:
+    async onToolCall({ toolCall }) {
+      if (toolCall.toolName === "getLocation") {
+        const cities = ["New York", "Los Angeles", "Chicago", "San Francisco"];
+        return cities[Math.floor(Math.random() * cities.length)];
+      }
+    },
+  });
 
   useEffect(() => {
     console.log("isLoading", chat.isLoading);
