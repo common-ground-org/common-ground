@@ -35,8 +35,12 @@
     "verify": "yarn workspace @common-ground/hardhat verify"
   },
   "devDependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
     "husky": "~8.0.3",
-    "lint-staged": "~13.2.2"
+    "lint-staged": "~13.2.2",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss": "latest"
   },
   "packageManager": "yarn@3.2.3",
   "engines": {
