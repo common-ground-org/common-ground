@@ -1,3 +1,4 @@
+import { defineChain } from "viem";
 import * as chains from "viem/chains";
 
 export type ScaffoldConfig = {
@@ -8,6 +9,23 @@ export type ScaffoldConfig = {
   onlyLocalBurnerWallet: boolean;
 };
 
+const flowTestnet = defineChain({
+  id: 545,
+  name: "Flow Testnet",
+  nativeCurrency: { name: "Flow", symbol: "FLOW", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://testnet.evm.nodes.onflow.org"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "FlowScan",
+      url: "https://evm-testnet.flowscan.io",
+    },
+  },
+});
+
 const scaffoldConfig = {
   // The networks on which your DApp is live
   targetNetworks: [
@@ -16,6 +34,7 @@ const scaffoldConfig = {
     chains.baseSepolia,
     chains.polygon,
     chains.polygonAmoy,
+    flowTestnet,
   ],
 
   // The interval at which your front-end polls the RPC servers for new data

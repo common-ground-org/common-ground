@@ -57,7 +57,7 @@ contract CommonGroundManager is Ownable {
 		string[] memory milestoneDescriptions,
 		uint256[] memory fundingAmounts,
 		uint256[] memory deadlines
-	) public onlyOwner returns (address) {
+	) public returns (address) {
 		_total_projects++;
 		address project = address(
 			new Project(
