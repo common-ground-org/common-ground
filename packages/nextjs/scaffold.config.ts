@@ -10,7 +10,13 @@ export type ScaffoldConfig = {
 
 const scaffoldConfig = {
   // The networks on which your DApp is live
-  targetNetworks: [chains.hardhat, chains.base, chains.baseSepolia, chains.polygon, chains.polygonAmoy],
+  targetNetworks: [
+    chains.hardhat,
+    // chains.base,
+    chains.baseSepolia,
+    chains.polygon,
+    chains.polygonAmoy,
+  ],
 
   // The interval at which your front-end polls the RPC servers for new data
   // it has no effect if you only target the local network (default is 4000)

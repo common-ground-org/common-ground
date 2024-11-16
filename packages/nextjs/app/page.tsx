@@ -17,7 +17,7 @@ function ChatInitState({ chat }: { chat: ChatResult }) {
       <div className="mt-12 mb-6 text-base font-semibold">
         <p>I wanna...</p>
       </div>
-      <div className="flex flex-wrap gap-8">
+      <div className="flex flex-wrap w-full justify-between px-20">
         <PictureCard title="Contribute" />
         <PictureCard title="Donate" />
         <PictureCard title="Build" />
