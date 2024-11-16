@@ -1,3 +1,4 @@
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {
   Sidebar,
   SidebarContent,
@@ -14,7 +15,7 @@ import { Compass, Home, LayoutDashboard } from "lucide-react";
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
@@ -24,7 +25,7 @@ const items = [
   },
   {
     title: "Dashboard",
-    url: "#",
+    url: "/dashboard",
     icon: LayoutDashboard,
   },
 ];
@@ -34,7 +35,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>CommandGround</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map(item => (
@@ -51,6 +52,10 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
     </Sidebar>
   );
 }
