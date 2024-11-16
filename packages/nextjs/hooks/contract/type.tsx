@@ -1,42 +1,42 @@
 import { BaseError } from "wagmi";
 
-// 通用的写入合约返回类型
+// the common write contract result type
 export interface WriteContractResult<TArgs = any> {
-  // 执行写入的函数
+  // the function to execute the write contract
   write: (args: TArgs) => void;
-  // 交易哈希
+  // the transaction hash
   hash: `0x${string}` | undefined;
-  // 错误信息
+  // the error information
   error: BaseError | null;
-  // 交易状态
+  // the transaction status
   isPending: boolean;
   isConfirming: boolean;
   isConfirmed: boolean;
 }
 
-// 通用的读取合约返回类型
+// the common read contract result type
 export interface ReadContractResult<TData = any> {
-  // 返回数据
+  // the returned data
   data: TData | undefined;
-  // 错误信息
+  // the error information
   error: BaseError | null;
-  // 加载状态
+  // the loading status
   isLoading: boolean;
-  // 刷新数据
+  // refresh the data
   refetch: () => Promise<void>;
 }
 
-// 所有权相关类型
+// the ownership related type
 export interface TransferOwnershipArgs {
   newOwner: `0x${string}`;
 }
 
-// 评估者相关类型
+// the evaluator related type
 export interface AddEvaluatorArgs {
   evaluator: `0x${string}`;
 }
 
-// 项目相关类型
+// the project related type
 export interface CreateProjectArgs {
   governanceRights: string;
   usageRights: string;
