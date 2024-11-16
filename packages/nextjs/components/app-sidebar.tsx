@@ -10,6 +10,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Compass, Home, LayoutDashboard } from "lucide-react";
+import { orbitron } from "~~/styles/fonts";
 
 // Menu items.
 const items = [
@@ -35,7 +36,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>CommandGround</SidebarGroupLabel>
+          <SidebarGroupLabel className={orbitron.className + " mb-2"}>CommonGround</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map(item => (
