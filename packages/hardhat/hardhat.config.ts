@@ -127,10 +127,26 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.publicgoods.network",
       accounts: [deployerPrivateKey],
     },
+    flowEvm: {
+      url: "https://testnet.evm.nodes.onflow.org",
+      accounts: [deployerPrivateKey],
+    },
   },
   // configuration for hardhat-verify plugin
   etherscan: {
-    apiKey: `${etherscanApiKey}`,
+    apiKey: {
+      polygonAmoy: "abc",
+    },
+    customChains: [
+      {
+        network: "polygonAmoy",
+        chainId: 80002,
+        urls: {
+          apiURL: "https://amoy-explorer.polygon.technology/api",
+          browserURL: "https://amoy-explorer.polygon.technology/",
+        },
+      },
+    ],
   },
   // configuration for etherscan-verify from hardhat-deploy plugin
   verify: {
