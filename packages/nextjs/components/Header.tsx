@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { RainbowKitCustomConnectButton } from "./scaffold-eth";
+import { SmartAccountButton } from "./ui/SmartAccountButton";
 import { SidebarTrigger } from "./ui/sidebar";
 import {
   NavigationMenu,
@@ -50,6 +51,7 @@ export function Header() {
         <SidebarTrigger />
       </div>
       <div className="flex items-center">
+        <SmartAccountButton />
         <RainbowKitCustomConnectButton />
       </div>
     </div>
