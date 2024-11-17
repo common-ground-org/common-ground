@@ -2,6 +2,7 @@
 
 import { ProjectCard } from "./ProjectCard";
 import { ProjectForm } from "./form";
+import { ProjectModal } from "./modal";
 import BoxReveal from "~~/components/ui/box-reveal";
 import { useProjectAddresses } from "~~/hooks/contracts/manager";
 
@@ -16,7 +17,7 @@ export function Explore() {
             Projects<span className="text-[#5046e6]">.</span>
           </p>
         </BoxReveal>
-        <ProjectForm />
+        <ProjectModal />
       </div>
 
       <div className="w-full max-w-4xl">
