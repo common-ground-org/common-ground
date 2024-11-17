@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { RainbowKitCustomConnectButton } from "./scaffold-eth";
+import { SidebarTrigger } from "./ui/sidebar";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +14,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { SidebarTrigger } from "./ui/sidebar";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -45,7 +45,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Header() {
   return (
-    <div className="w-full flex justify-between items-center p-4">
+    <div className="w-full flex justify-between items-center p-4 backdrop-blur-sm bg-white/30">
       <div className="grow">
         <SidebarTrigger />
       </div>
