@@ -16,10 +16,10 @@ export function Explore() {
             Projects<span className="text-[#5046e6]">.</span>
           </p>
         </BoxReveal>
+        <ProjectForm />
       </div>
 
       <div className="w-full max-w-4xl">
-        <ProjectForm />
         <div className="min-h-[500px] p-4  flex flex-col justify-center border border-dashed rounded-lg space-y-4">
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectAddresseList?.map(address => <ProjectCard address={address} key={address} />)}
