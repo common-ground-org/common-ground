@@ -12,9 +12,9 @@ export function Explore() {
   return (
     <div className="space-y-2 lg:space-y-4 p-2 lg:p-8">
       <div className="flex items-center justify-between">
-        <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-          <p className="text-[4.0rem] font-semibold">
-            Projects<span className="text-[#5046e6]">.</span>
+        <BoxReveal boxColor={"#74aee8"} duration={0.5}>
+          <p className="text-[4.0rem] font-semibold bg-gradient-to-r from-[#74aee8] to-[#5046e6] text-transparent bg-clip-text">
+            Projects<span>.</span>
           </p>
         </BoxReveal>
         <ProjectModal />
