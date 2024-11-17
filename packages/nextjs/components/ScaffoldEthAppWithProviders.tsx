@@ -19,7 +19,7 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen w-screen">
         <SidebarProvider>
           <AppSidebar />
           <main className="grow flex flex-col h-screen">

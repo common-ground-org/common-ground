@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.72",
+    "@biconomy/account": "^4.5.7",
     "@coinbase/onchainkit": "^0.35.5",
     "@heroicons/react": "~2.1.5",
     "@privy-io/react-auth": "latest",

@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     CommonGroundManager: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      address: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
       abi: [
         {
           inputs: [],
@@ -282,7 +282,7 @@ const deployedContracts = {
       },
     },
     Project: {
-      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
       abi: [
         {
           inputs: [
@@ -569,7 +569,7 @@ const deployedContracts = {
   },
   80002: {
     CommonGroundManager: {
-      address: "0xB40a7948bE4894DE05eaDaa2154B8e01a8dC0f1a",
+      address: "0xeDc6c016aBD2b01e15633866d559716D01FcA4e2",
       abi: [
         {
           inputs: [],
@@ -844,7 +844,7 @@ const deployedContracts = {
       },
     },
     Project: {
-      address: "0x21bcaeC732B0E53d4093E42eB2A52677C4451741",
+      address: "0x830ef5B5F411626cB7015cC784d8bb8Bc922c3a2",
       abi: [
         {
           inputs: [
